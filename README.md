@@ -11,6 +11,7 @@ The following variables need to be set exported in the environment or passed to 
 * `SENTRY_ORGANIZATION`
 * `SENTRY_PROJECT`
 * `SENTRY_RELEASE_VERSION`
+* `SENTRY_REPOSITORY` in the form `<org>/<project>`
 
 ## Optional parameters
 
