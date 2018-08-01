@@ -24,7 +24,9 @@ curl ${SENTRY_API_URL}/projects/${SENTRY_ORGANIZATION}/${SENTRY_PROJECT}/release
   -X POST \
   -H "Authorization: Bearer $SENTRY_TOKEN" \
   -H 'Content-Type: application/json' \
-  -d "{\"version\": \"${SENTRY_RELEASE_VERSION}\"}"
+  -d "{\"version\": \"${SENTRY_RELEASE_VERSION}\", \
+    \"refs\": [{\"repository\": \"${SENTRY_REPOSITORY}\", \"commit\": \"${SENTRY_RELEASE_VERSION}\"}], \
+    \"projects\": [\"${SENTRY_PROJECT}\"]}"
 printf "\n"
 
 printf "Uploading source files and map files ...\n"
