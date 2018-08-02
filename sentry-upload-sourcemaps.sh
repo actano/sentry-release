@@ -18,9 +18,9 @@ function upload_file {
     printf "\n"
 }
 
-# Create new release
+# Create new release and associate the current commit with it
 printf "Creating release ${SENTRY_RELEASE_VERSION}\n"
-curl ${SENTRY_API_URL}/projects/${SENTRY_ORGANIZATION}/${SENTRY_PROJECT}/releases/ \
+curl ${SENTRY_API_URL}/organizations/${SENTRY_ORGANIZATION}/releases/ \
   -X POST \
   -H "Authorization: Bearer $SENTRY_TOKEN" \
   -H 'Content-Type: application/json' \
